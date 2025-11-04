@@ -45,19 +45,14 @@ cargo leptos watch -- -d ./tmp/db.sqlite -c ./config_example.yaml
 ## Without Nix / Other instructions
 
 Install the following dependencies:
-
-- rust
+- rustup
 - cargo-leptos
-- sqlx (sqlx-cli)
-- tailwind
-- sqlite
+- sqlx-cli
+
+cargo-leptos and sqlx-cli are avaiable over cargo.
 
 ```bash
-# could also be present in a .env
-export DATABASE_URL="sqlite:tmp/db.sqlite" # not needed with nix (env is in flake.nix)
-
-mkdir tmp
-sqlx database setup
+mkdir tmp # for the db file
 cargo leptos watch -- -d ./tmp/db.sqlite -c ./config_example.yaml
 ```
 
